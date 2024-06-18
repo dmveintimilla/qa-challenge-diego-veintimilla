@@ -1,0 +1,15 @@
+Conclusiones
+
+E2E
+El flujo de compra de la página web "https://wwww.demoblaze.com" funciona correctamente, ya que permite agregar productos al carrito y llenar el formulario de compra para finalmente mostrar una alerta de confirmación.
+Cypress demostró ser un herramienta que facilita la automatización de pruebas E2E que permite identificar problemas que puedan efectar a la experiencia de usuario.
+
+Como recomendaciones se aconseja utilizar Cypress para imprementar pruebas adicionales y monitorear regularmente las pruebas por si el sitio llegara a tener una actualización.
+
+---
+API
+Cypress demostró ser una herramienta efectiva para poder testear de manera automatizada, así pues, ayuda a detectar errores y asegura que el flujo que se espera esté funcionando.
+Se realizó una validación del flujo de compra, verificando que los componentes y servicios utilizados estén funcionando de la manera esperada.
+
+Como recomendación para un trabajo a futuro sería integrar Cypress en el pipeline de CI/CD para que las pruebas se ejecuten de manera automática y también añadir más casos de prueba.
+
