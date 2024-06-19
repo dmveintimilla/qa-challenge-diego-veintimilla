@@ -1,21 +1,15 @@
-describe('API Test - Signup and Login', () => {
+describe('API - Signup and Login', () => {
   const newUser = {
     username: 'newuser_diegoveintimilla',
     password: 'password123'
   };
-
-  const existingUser = {
-    username: 'newuser',
-    password: 'password123'
-  };
-
 
   const incorrectUser = {
     username: 'wronguser',
     password: 'wrongpassword'
   };
 
-  it('Create a new user', () => {
+  it('Crear nuevo usuario', () => {
     cy.request('POST', 'http://api.demoblaze.com/signup', newUser)
       .then((response) => {
         expect(response.status).to.eq(200);
@@ -23,11 +17,11 @@ describe('API Test - Signup and Login', () => {
       });
   });
 
-  it('Attempt to create an existing user', () => {
+  it('Intentar crear un usuario existente', () => {
     cy.request({
       method: 'POST',
       url: 'http://api.demoblaze.com/signup',
-      body: existingUser,
+      body: newUser,
       failOnStatusCode: false
     }).then((response) => {
       expect(response.status).to.eq(200);
@@ -35,7 +29,7 @@ describe('API Test - Signup and Login', () => {
     });
   });
 
-  it('Login with correct username and password', () => {
+  it('Login con credenciales correctas', () => {
     cy.request('POST', 'http://api.demoblaze.com/login', newUser)
       .then((response) => {
         expect(response.status).to.eq(200);
@@ -43,7 +37,7 @@ describe('API Test - Signup and Login', () => {
       });
   });
 
-  it('Login with incorrect username and password', () => {
+  it('Login con credenciales incorrectas', () => {
     cy.request({
       method: 'POST',
       url: 'http://api.demoblaze.com/login',

@@ -1,4 +1,4 @@
-describe('Flujo de compra en demoblaze', () => {
+describe('Flujo de compra', () => {
   it('Debería agregar dos productos al carrito y completar la compra', () => {
     cy.visit('https://www.demoblaze.com/');
 
@@ -22,12 +22,12 @@ describe('Flujo de compra en demoblaze', () => {
     cy.get('#cartur').click();
 
     cy.contains('Place Order').click();
-    cy.get('#name').type('Juan Perez');
+    cy.get('#name').type('Juanito Suasnavas');
     cy.get('#country').type('Ecuador');
     cy.get('#city').type('Quito');
     cy.get('#card').type('1234567890123456');
-    cy.get('#month').type('12');
-    cy.get('#year').type('2025');
+    cy.get('#month').type('10');
+    cy.get('#year').type('2026');
     cy.contains('Purchase').click();
 
     cy.get('.sweet-alert').should('be.visible');
